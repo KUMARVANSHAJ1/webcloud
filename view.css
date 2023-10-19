@@ -1,0 +1,79 @@
+/* Reset some default styles and add basic styling */
+body {
+    font-family: Algerian, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url(cloud1.jpg);
+    color: #cbf60a;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    max-width: 10000px;
+    margin: 75px auto;
+    padding: 50px;
+    background-image:url(cloud4.jpg);
+    border: 4px solid cyan;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 24px;
+    background-image: url(cloud2.jpg);
+    text-align: center;
+    color: #f2f6f3;
+}
+
+form {
+    margin: 10px 0;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    background-color: #4caf50;
+    color:white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+button.download {
+    background-color: #007bff;
+    color: #06010f;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add more styling as needed */
+
+/* Responsive design for mobile devices */
+
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+}

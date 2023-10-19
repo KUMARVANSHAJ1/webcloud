@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Page</title>
+    <style >
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin: 0;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .switch {
+            margin-top: 10px;
+        }
+
+        .switch a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body background="cloud4.jpg">
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="redirectToAnotherPage()">Login</button>
+              </div>
+              
+              <script>
+                function redirectToAnotherPage() {
+                  window.location.href = "home.html"; // Replace with the desired page URL
+                }
+              </script>
+              
+        </form>
+        <div class="switch">
+            <p>Don't have an account? <a href="reg.html">Sign up</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="signup" style="display: none;">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="new-username">Username</label>
+                <input type="text" id="new-username" name="new-username" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="new-password">Password</label>
+                <input type="password" id="new-password" name="new-password" placeholder="Choose a password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="switch">
+            <p>Already have an account? <a href="#login">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginContainer = document.getElementById('login');
+        const signupContainer = document.getElementById('signup');
+
+        document.querySelector('.switch a[href="#signup"]').addEventListener('click', function() {
+            loginContainer.style.display = 'none';
+            signupContainer.style.display = 'block';
+        });
+
+        document.querySelector('.switch a[href="#login"]').addEventListener('click', function() {
+            loginContainer.style.display = 'block';
+            signupContainer.style.display = 'none';
+        });
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Handle login form submission here
+        });
+
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Handle signup form submission here
+        });
+    </script>
+</body>
+</html>
